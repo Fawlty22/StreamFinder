@@ -6,13 +6,31 @@
   <mat-card-content>
     <mat-form-field color="accent">
       <mat-label>Search...</mat-label>
-      <input matInput placeholder="Type your search here" #searchbar>
+      <input matInput (keyup.enter)="search()" placeholder="Type your search here" #searchbar>
     </mat-form-field>
   </mat-card-content>
   <mat-card-actions align="end">
-    <button mat-flat-button (click)="clear()">Clear</button>
-    <button mat-flat-button color="accent" (click)="search()">Search</button>
+      <button mat-flat-button (click)="clear()">Clear</button>
+      <button mat-flat-button color="accent" (click)="search()">Search</button>
   </mat-card-actions>
 </mat-card>
+<h1 *ngIf="results.length">Results:</h1>
+<section *ngIf="!loading">
+  <mat-card *ngFor="let film of results" class="result-card">
+    <mat-card-header>
+      <mat-card-title>{{film.title}}</mat-card-title>
+      <mat-card-subtitle>Score:&nbsp;{{film.vote_average| number: '1.1-1'}}&nbsp;/&nbsp;10</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="baseImageUrl + film.poster_path" style="height: 400px" alt="Poster for {{film.title}}">
+    <mat-card-content>
+      <p>{{film.overview | truncate:150}}</p>
+    </mat-card-content>
+    <div class="providers">
+      <img *ngFor="let prov of film.providers" [src]="baseImageUrl + prov.logo_path" height="50px" width="50px">
+      <p *ngIf="!film.providers">There are no platforms streaming this title!</p>
+    </div>
+  </mat-card>
+  <p *ngIf="searched && !results.length && !loading" [ngStyle]="{marginTop:'5rem'}">There are no search results...</p>
+  <mat-spinner *ngIf="searched && loading" [ngStyle]="{marginTop:'5rem'}">Loading...</mat-spinner>
+</section>
 
-<p *ngFor="let film of results">{{film.title}}</p>

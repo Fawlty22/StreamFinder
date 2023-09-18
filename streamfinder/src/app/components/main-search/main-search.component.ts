@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {MatInput} from "@angular/material/input";
+import {SearchService} from "../../services/search.service";
 
 @Component({
   selector: 'app-main-search',
@@ -9,17 +9,33 @@ import {MatInput} from "@angular/material/input";
 export class MainSearchComponent implements OnInit {
   @ViewChild('searchbar') searchbar: ElementRef | undefined;
   results: any = [];
-  constructor() { }
+  loading: boolean = false;
+  searched: boolean = false;
+  baseImageUrl = 'https://image.tmdb.org/t/p/w500';
+  constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
   }
 
   search(){
-    console.log('search', this.searchbar?.nativeElement.value)
+    this.loading = true;
+    this.searched = true;
+    this.searchService.findOne(this.searchbar!.nativeElement.value).subscribe(response => {
+      this.results = response.results;
+      this.results.forEach((each: any) => {
+        this.searchService.findProvider(each.id).subscribe((provResponse: any) => {
+          each.providers = provResponse.results?.US?.flatrate;
+        })
+      })
+
+    })
+    this.loading = false;
   }
 
   clear(){
     this.searchbar!.nativeElement.value = ''
+    this.results = [];
+    this.searched = false;
   }
 
 }

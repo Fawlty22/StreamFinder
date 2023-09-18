@@ -8,18 +8,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import { TruncatePipe } from './pipes/truncate.pipe';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainSearchComponent
+    MainSearchComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     MatButtonModule
   ],
   providers: [],
