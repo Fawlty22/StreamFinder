@@ -1,0 +1,10 @@
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

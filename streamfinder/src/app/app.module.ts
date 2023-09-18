@@ -11,12 +11,15 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
 import { TruncatePipe } from './pipes/truncate.pipe';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { BackToTopComponent } from './components/back-to-top/back-to-top.component';
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
     AppComponent,
     MainSearchComponent,
-    TruncatePipe
+    TruncatePipe,
+    BackToTopComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatCardModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

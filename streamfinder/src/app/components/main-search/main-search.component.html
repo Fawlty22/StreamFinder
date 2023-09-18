@@ -33,5 +33,6 @@
   </mat-card>
   <p *ngIf="searched && !results.length && !loading" [ngStyle]="{marginTop:'5rem'}">There are no search results...</p>
   <mat-spinner *ngIf="searched && loading" [ngStyle]="{marginTop:'5rem'}">Loading...</mat-spinner>
+  <app-back-to-top></app-back-to-top>
 </section>
 
