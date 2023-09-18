@@ -1,7 +1,11 @@
+#logo {
+  padding: 2rem;
+}
 mat-card {
   width: 50%;
   height: fit-content;
   margin: 5rem auto 0;
+  border: 1px solid white;
 }
 
 mat-card-content {
@@ -17,7 +21,13 @@ button:not(:last-child){
   margin-right: 1rem;
 }
 
+
+#results-body{
+  padding: 0 2rem;
+}
+
 .result-card{
+  min-height: 605px;
   width: 25vw;
   height: fit-content;
   margin-top: 1rem;
@@ -37,6 +47,8 @@ h1 {
 
 .providers {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
+

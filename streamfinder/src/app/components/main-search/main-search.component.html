@@ -1,3 +1,4 @@
+<img src="assets/StreamFinder-LogoCropped.png" id="logo">
 <mat-card>
   <mat-card-header>
     <mat-card-title>Search for a movie or show</mat-card-title>
@@ -11,11 +12,11 @@
   </mat-card-content>
   <mat-card-actions align="end">
       <button mat-flat-button (click)="clear()">Clear</button>
-      <button mat-flat-button color="accent" (click)="search()">Search</button>
+      <button mat-flat-button [ngStyle]="{backgroundColor: 'white', color: 'black'}" (click)="search()">Search</button>
   </mat-card-actions>
 </mat-card>
-<h1 *ngIf="results.length">Results:</h1>
-<section *ngIf="!loading">
+<h1 *ngIf="results.length" [ngStyle]="{color: 'white'}">Results:</h1>
+<section *ngIf="!loading" id="results-body">
   <mat-card *ngFor="let film of results" class="result-card">
     <mat-card-header>
       <mat-card-title>{{film.title}}</mat-card-title>
