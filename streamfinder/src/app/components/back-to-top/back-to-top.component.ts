@@ -10,13 +10,10 @@ export class BackToTopComponent {
 
   @HostListener('window:scroll', [])
   onScroll(): void {
-    // Check scroll position and toggle button visibility
     this.isButtonVisible = window.pageYOffset > 100;
-    console.log(window.pageYOffset > 100)
   }
 
   scrollToTop(): void {
-    // Scroll to the top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
