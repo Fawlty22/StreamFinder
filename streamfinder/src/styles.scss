@@ -2,6 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 html, body {
   height: 100%;
   margin: 0;
@@ -17,34 +18,30 @@ body {
 }
 
 mat-card {
-  height: fit-content;
-  margin: 0 auto;
-  border: 1px solid white;
+  @apply h-fit mx-auto border border-white;
 }
 
 //currently applying to just the searchbar
 mat-card-content form {
-  display: flex;
-  justify-content: center;
+  @apply flex justify-center;
 }
 
 
 mat-form-field{
-  width: 75%;
+ @apply w-3/4;
 }
 
 h1 {
-  color: white;
+  @apply text-white;
 }
 mat-spinner {
-  margin-top: 5rem;
+  @apply mt-20;
 }
 
 #logo {
-  padding: 2rem;
+  @apply p-8;
 }
 
 .white-btn {
-  background-color: white;
-  color: black;
+  @apply bg-white text-black;
 }

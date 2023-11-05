@@ -1,19 +1,16 @@
 button:not(:last-child){
-  margin-right: 1rem;
+  @apply mr-4;
 }
 
 #results-body {
-  padding: .5rem;
+ @apply p-2;
 }
 
 #results-list{
-  padding: 0 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
+  @apply flex flex-wrap items-center justify-evenly;
+  
 }
 
 #search-card{
-  width: 50%;
+  @apply w-1/2;
  }
