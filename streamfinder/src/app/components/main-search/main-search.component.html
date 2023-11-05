@@ -16,11 +16,14 @@
       <button mat-flat-button [ngStyle]="{backgroundColor: 'white', color: 'black'}" (click)="search()">Search</button>
   </mat-card-actions>
 </mat-card>
-<h1 *ngIf="results.length" [ngStyle]="{color: 'white'}">Results:</h1>
-<section *ngIf="!loading" id="results-body">
+<section id="results-body">
+  <h1 *ngIf="results.length">Results:</h1>
+<div *ngIf="!loading" id="results-list">
   <app-search-result [results]="results"></app-search-result>
   <p *ngIf="searched && !results.length && !loading" [ngStyle]="{marginTop:'5rem'}">There are no search results...</p>
   <mat-spinner *ngIf="searched && loading" [ngStyle]="{marginTop:'5rem'}">Loading...</mat-spinner>
   <app-back-to-top></app-back-to-top>
+</div>
 </section>
+
 

@@ -2,7 +2,11 @@ button:not(:last-child){
   margin-right: 1rem;
 }
 
-#results-body{
+#results-body {
+  padding: .5rem;
+}
+
+#results-list{
   padding: 0 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -14,6 +18,3 @@ button:not(:last-child){
   width: 50%;
  }
 
-// app-results-card {
-  
-// }
