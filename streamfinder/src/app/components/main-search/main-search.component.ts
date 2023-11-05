@@ -21,6 +21,11 @@ export class MainSearchComponent implements OnInit {
     this.searched = true;
     this.searchService.findOne(this.searchbar!.nativeElement.value).subscribe(response => {
       this.results = response.results;
+      this.results.forEach((each: any) => {
+        this.searchService.findProvider(each.id).subscribe((provResponse: any) => {
+          each.providers = provResponse.results?.US?.flatrate;
+        })
+      })
       this.loading = false;
     })
     
