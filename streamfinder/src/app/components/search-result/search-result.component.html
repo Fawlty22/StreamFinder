@@ -1,0 +1,14 @@
+<mat-card *ngFor="let film of results" class="result-card">
+    <mat-card-header>
+      <mat-card-title>{{film.title}}</mat-card-title>
+      <mat-card-subtitle>Score:&nbsp;{{film.vote_average| number: '1.1-1'}}&nbsp;/&nbsp;10</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="baseImageUrl + film.poster_path" height="400px" width="300px" alt="Poster for {{film.title}}">
+    <mat-card-content>
+      <p>{{film.overview | truncate:150}}</p>
+    </mat-card-content>
+    <div class="providers">
+      <img *ngFor="let prov of film.providers" [src]="baseImageUrl + prov.logo_path" height="50px" width="50px">
+      <p *ngIf="!film.providers">There are no platforms streaming this title!</p>
+    </div>
+  </mat-card>

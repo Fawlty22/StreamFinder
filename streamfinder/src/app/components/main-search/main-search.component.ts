@@ -11,7 +11,6 @@ export class MainSearchComponent implements OnInit {
   results: any = [];
   loading: boolean = false;
   searched: boolean = false;
-  baseImageUrl = 'https://image.tmdb.org/t/p/w500';
   constructor(private searchService: SearchService) { }
 
   ngOnInit(): void {
@@ -22,14 +21,9 @@ export class MainSearchComponent implements OnInit {
     this.searched = true;
     this.searchService.findOne(this.searchbar!.nativeElement.value).subscribe(response => {
       this.results = response.results;
-      this.results.forEach((each: any) => {
-        this.searchService.findProvider(each.id).subscribe((provResponse: any) => {
-          each.providers = provResponse.results?.US?.flatrate;
-        })
-      })
-
+      this.loading = false;
     })
-    this.loading = false;
+    
   }
 
   clear(){

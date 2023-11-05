@@ -11,3 +11,29 @@ body {
   background-size: cover;
   overflow-y: auto;
 }
+
+#logo {
+  padding: 2rem;
+}
+
+mat-card {
+  height: fit-content;
+  margin: 0 auto;
+  border: 1px solid white;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+}
+
+
+mat-form-field{
+  width: 75%;
+}
+
+h1 {
+  margin: 2rem 0 0 2rem;
+}
+
+

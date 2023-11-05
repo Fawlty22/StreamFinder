@@ -1,0 +1,12 @@
+.providers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .result-card{
+    min-height: 605px;
+    width: 25vw;
+    margin-top: 1rem;
+  }

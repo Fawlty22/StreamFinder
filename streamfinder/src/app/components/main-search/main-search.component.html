@@ -1,6 +1,6 @@
 <img src="assets/StreamFinder-LogoCropped.png" id="logo">
 <!-- Separate this out into components -->
-<mat-card>
+<mat-card id="search-card">
   <mat-card-header>
     <mat-card-title>Search for a movie or show</mat-card-title>
     <mat-card-subtitle>We'll show you where you can stream it!</mat-card-subtitle>
@@ -18,20 +18,7 @@
 </mat-card>
 <h1 *ngIf="results.length" [ngStyle]="{color: 'white'}">Results:</h1>
 <section *ngIf="!loading" id="results-body">
-  <mat-card *ngFor="let film of results" class="result-card">
-    <mat-card-header>
-      <mat-card-title>{{film.title}}</mat-card-title>
-      <mat-card-subtitle>Score:&nbsp;{{film.vote_average| number: '1.1-1'}}&nbsp;/&nbsp;10</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="baseImageUrl + film.poster_path" style="height: 400px" alt="Poster for {{film.title}}">
-    <mat-card-content>
-      <p>{{film.overview | truncate:150}}</p>
-    </mat-card-content>
-    <div class="providers">
-      <img *ngFor="let prov of film.providers" [src]="baseImageUrl + prov.logo_path" height="50px" width="50px">
-      <p *ngIf="!film.providers">There are no platforms streaming this title!</p>
-    </div>
-  </mat-card>
+  <app-search-result [results]="results"></app-search-result>
   <p *ngIf="searched && !results.length && !loading" [ngStyle]="{marginTop:'5rem'}">There are no search results...</p>
   <mat-spinner *ngIf="searched && loading" [ngStyle]="{marginTop:'5rem'}">Loading...</mat-spinner>
   <app-back-to-top></app-back-to-top>
