@@ -18,7 +18,8 @@ mat-card {
   border: 1px solid white;
 }
 
-mat-card-content {
+//currently applying to just the searchbar
+mat-card-content form {
   display: flex;
   justify-content: center;
 }
