@@ -24,7 +24,8 @@ export class MainSearchComponent implements OnInit {
   search(){
     this.loading = true;
     this.searched = true;
-    this.searchService.findOne(this.form.get('search')?.value).subscribe(response => {
+    this.searchService.movieSearch(this.form.get('search')?.value).subscribe(response => {
+      
       this.results = response.results;
       this.results.forEach((each: any) => {
         this.searchService.findProvider(each.id).subscribe((provResponse: any) => {
