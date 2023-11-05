@@ -14,7 +14,7 @@ export class MainSearchComponent implements OnInit {
   form: FormGroup;
   constructor(private searchService: SearchService, private fb: FormBuilder) { 
     this.form = fb.group({
-      search: ['']
+      search: ['fish']
     })
   }
 

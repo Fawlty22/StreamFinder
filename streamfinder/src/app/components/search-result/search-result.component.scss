@@ -5,8 +5,17 @@
     justify-content: space-around;
   }
   
+
+  img {
+    height: auto;
+    min-height: 90px;
+    width: 90px;
+    min-width: 90px;
+  }
   .result-card{
-    min-height: 605px;
-    width: 25vw;
-    margin-top: 1rem;
+    @apply flex;
+  }
+
+  .result-info {
+    @apply w-full pt-2 pl-2;
   }

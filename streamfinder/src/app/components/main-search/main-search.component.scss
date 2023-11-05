@@ -7,10 +7,13 @@ button:not(:last-child){
 }
 
 #results-list{
-  @apply flex flex-wrap items-center justify-evenly;
-  
+  @apply flex flex-wrap items-center justify-center gap-2;
 }
 
 #search-card{
   @apply w-1/2;
+ }
+
+ app-search-result {
+  @apply w-2/5;
  }
