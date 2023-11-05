@@ -10,7 +10,6 @@ button:not(:last-child){
   padding: 0 2rem;
   display: flex;
   flex-wrap: wrap;
-  // width: 100%;
   justify-content: space-around;
   align-items: center;
 }
@@ -18,7 +17,3 @@ button:not(:last-child){
 #search-card{
   width: 50%;
  }
-
-// app-search-result {
-//   width: 25%;
-// }
