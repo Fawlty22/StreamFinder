@@ -1,3 +1,7 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
 html, body {
   height: 100%;
   margin: 0;
@@ -5,7 +9,7 @@ html, body {
 }
 
 body {
-  background: linear-gradient(to bottom left, #585B71 0%, #2C2F4B 100%);
+  background: linear-gradient(to bottom left, #585B71 0%, #2C2F4B 100%); 
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
