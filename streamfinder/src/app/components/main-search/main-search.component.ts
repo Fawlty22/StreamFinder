@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {SearchService} from "../../services/search.service";
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-main-search',
@@ -7,11 +8,15 @@ import {SearchService} from "../../services/search.service";
   styleUrls: ['./main-search.component.scss']
 })
 export class MainSearchComponent implements OnInit {
-  @ViewChild('searchbar') searchbar: ElementRef | undefined;
   results: any = [];
   loading: boolean = false;
   searched: boolean = false;
-  constructor(private searchService: SearchService) { }
+  form: FormGroup;
+  constructor(private searchService: SearchService, private fb: FormBuilder) { 
+    this.form = fb.group({
+      search: ['']
+    })
+  }
 
   ngOnInit(): void {
   }
@@ -19,7 +24,7 @@ export class MainSearchComponent implements OnInit {
   search(){
     this.loading = true;
     this.searched = true;
-    this.searchService.findOne(this.searchbar!.nativeElement.value).subscribe(response => {
+    this.searchService.findOne(this.form.get('search')?.value).subscribe(response => {
       this.results = response.results;
       this.results.forEach((each: any) => {
         this.searchService.findProvider(each.id).subscribe((provResponse: any) => {
@@ -32,7 +37,7 @@ export class MainSearchComponent implements OnInit {
   }
 
   clear(){
-    this.searchbar!.nativeElement.value = ''
+   this.form.get('search')?.setValue('');
     this.results = [];
     this.searched = false;
   }

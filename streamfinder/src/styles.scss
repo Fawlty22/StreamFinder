@@ -12,10 +12,6 @@ body {
   overflow-y: auto;
 }
 
-#logo {
-  padding: 2rem;
-}
-
 mat-card {
   height: fit-content;
   margin: 0 auto;
@@ -34,4 +30,16 @@ mat-form-field{
 
 h1 {
   color: white;
+}
+mat-spinner {
+  margin-top: 5rem;
+}
+
+#logo {
+  padding: 2rem;
+}
+
+.white-btn {
+  background-color: white;
+  color: black;
 }

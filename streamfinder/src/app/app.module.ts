@@ -14,7 +14,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { BackToTopComponent } from './core/components/back-to-top/back-to-top.component';
 import {MatIconModule} from "@angular/material/icon";
 import { SearchResultComponent } from './components/search-result/search-result.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,9 @@ import { SearchResultComponent } from './components/search-result/search-result.
     MatInputModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
