@@ -15,13 +15,15 @@ import { BackToTopComponent } from './core/components/back-to-top/back-to-top.co
 import {MatIconModule} from "@angular/material/icon";
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { OverviewComponent } from './components/overview/overview.component';
 @NgModule({
   declarations: [
     AppComponent,
     MainSearchComponent,
     TruncatePipe,
     BackToTopComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    OverviewComponent
   ],
   imports: [
     BrowserModule,

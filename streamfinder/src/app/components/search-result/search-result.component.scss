@@ -21,3 +21,7 @@
     min-height: 135px;
     max-height: 135px;
   }
+
+  mat-card {
+    @apply hover:bg-teal cursor-pointer;
+  }

@@ -13,7 +13,7 @@
     </div>
   </mat-card> -->
 
-<mat-card>
+<mat-card [routerLink]="'/overview/' + result.id">
   <div class="result-card">
     <img
       [src]="baseImageUrl + result.poster_path"

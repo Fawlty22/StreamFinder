@@ -11,5 +11,5 @@ export class SearchResultComponent {
   @Input() result: SearchResult = {} as SearchResult;
   baseImageUrl = 'https://image.tmdb.org/t/p/w500';
   constructor() { }
-
+  
 }
