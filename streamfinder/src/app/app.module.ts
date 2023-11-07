@@ -16,6 +16,8 @@ import {MatIconModule} from "@angular/material/icon";
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OverviewComponent } from './components/overview/overview.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { OverviewComponent } from './components/overview/overview.component';
     MatButtonModule,
     MatIconModule,
     ReactiveFormsModule,
-    FormsModule
+    MatCheckboxModule,
+    FormsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

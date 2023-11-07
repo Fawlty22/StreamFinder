@@ -17,3 +17,7 @@ button:not(:last-child){
  app-search-result {
   @apply w-2/5;
  }
+
+ mat-radio-button:not(:first-of-type) {
+  margin-left: 3rem;
+ }

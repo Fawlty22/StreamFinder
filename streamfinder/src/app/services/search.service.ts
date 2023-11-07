@@ -7,7 +7,8 @@ import {environment} from "../../environments/environment";
   providedIn: 'root'
 })
 export class SearchService {
-  baseUrl = 'https://api.themoviedb.org/3/search/movie?query='
+  baseMovieUrl = 'https://api.themoviedb.org/3/search/movie?query='
+  baseShowUrl = 'https://api.themoviedb.org/3/search/tv?query='
   movieFullDetailsUrl = 'https://api.themoviedb.org/3/movie';
   appendProvidersQuery = 'append_to_response=watch%2Fproviders&language=en-US'
   apiKey = environment.apiKey
@@ -15,8 +16,12 @@ export class SearchService {
 
   constructor(private http: HttpClient) {}
 
-  movieSearch(name: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}${name}&api_key=${this.apiKey}` )
+  search(name: string, type: string): Observable<any> {
+    if (type === 'movie') {
+      return this.http.get(`${this.baseMovieUrl}${name}&api_key=${this.apiKey}`)
+    } else {
+      return this.http.get(`${this.baseShowUrl}${name}&api_key=${this.apiKey}`)
+    }
   }
 
   findOneMovie(id: number, providersBool: boolean = true): Observable<any> {

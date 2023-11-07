@@ -14,7 +14,8 @@ export class MainSearchComponent implements OnInit {
   form: FormGroup;
   constructor(private searchService: SearchService, private fb: FormBuilder) { 
     this.form = fb.group({
-      search: ['fish']
+      search: [''],
+      type: ['']
     })
   }
 
@@ -24,7 +25,7 @@ export class MainSearchComponent implements OnInit {
   search(){
     this.loading = true;
     this.searched = true;
-    this.searchService.movieSearch(this.form.get('search')?.value).subscribe(response => {
+    this.searchService.search(this.form.get('search')?.value, this.form.get('type')?.value).subscribe(response => {
       
       this.results = response.results;
       this.results.forEach((each: any) => {

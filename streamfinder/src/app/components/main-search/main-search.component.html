@@ -2,14 +2,14 @@
 
 <mat-card id="search-card">
   <mat-card-header>
-    <mat-card-title>Search for a movie - shows coming soon!</mat-card-title>
+    <mat-card-title>Search for a movie or show...</mat-card-title>
     <mat-card-subtitle
-      >We'll show you where you can stream it!</mat-card-subtitle
+      ><i>We'll find where you can stream it!</i></mat-card-subtitle
     >
   </mat-card-header>
   <mat-card-content>
     <form [formGroup]="form">
-      <mat-form-field color="accent" >
+      <mat-form-field color="accent">
         <mat-label>Search...</mat-label>
         <input
           matInput
@@ -18,9 +18,14 @@
           placeholder="Type your search here"
         />
       </mat-form-field>
+      
     </form>
   </mat-card-content>
-  <mat-card-actions align="end">
+  <mat-card-actions align="end" [formGroup]="form">
+    <mat-radio-group class="absolute left-4" formControlName="type" aria-label="Select an option">
+      <mat-radio-button value="movie">Movie</mat-radio-button>
+      <mat-radio-button value="show">Show</mat-radio-button>
+    </mat-radio-group>
     <button mat-flat-button (click)="clear()">Clear</button>
     <button mat-flat-button class="white-btn" (click)="search()">Search</button>
   </mat-card-actions>
